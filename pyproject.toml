@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remote-control"
+version = "0.4.4.dev1"
+description = "Linux client for Windows RDP and policy-compliant existing-session assistance"
+requires-python = ">=3.10"
+dependencies = [
+  "impacket>=0.13.0",
+  "PySide6>=6.6",
+  "dnspython>=2.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+remote-control = "session_assist.gui.app:main"
+remote-control-cli = "session_assist.cli:main"
+# Compatibility alias for the initial proof-of-concept CLI name.
+session-assist = "session_assist.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/applications" = ["data/remote-control.desktop"]
+"share/icons/hicolor/scalable/apps" = ["data/icons/hicolor/scalable/apps/remote-control.svg"]

@@ -1,0 +1,40 @@
+# Python environments and generated modules
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Test, type-check, and coverage output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build products
+build/
+dist/
+*.deb
+
+# Runtime state, diagnostics, invitations, and credentials
+*.log
+logs/
+.env
+.env.*
+krb5cc_*
+*krb5cc*
+*.msrcIncident
+remote-control/
+settings.json
+*.sqlite
+*.sqlite3
+*.db
+
+# Editor and temporary files
+*.tmp
+*.swp
+*~
+.idea/
+.vscode/

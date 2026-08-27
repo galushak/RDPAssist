@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Remote Control
+Comment=Windows RDP and physical-console session assistance
+Exec=remote-control
+Icon=remote-control
+Terminal=false
+Categories=Network;RemoteAccess;Qt;
+Keywords=RDP;Remote Desktop;Remote Assistance;Windows;
+StartupNotify=true
+StartupWMClass=remote-control
