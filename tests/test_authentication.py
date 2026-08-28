@@ -32,6 +32,7 @@ def test_kerberos_cache_status_does_not_expose_ticket_data(monkeypatch):
         stdout = "Ticket cache: FILE:/private/cache\nDefault principal: testuser@EXAMPLE.ORG\n"
 
     monkeypatch.setattr(authentication.subprocess, "run", lambda *args, **kwargs: Result())
+    monkeypatch.setattr(authentication.shutil, "which", lambda _name: "/usr/bin/klist")
     status = authentication.kerberos_cache_status()
     assert status.available is True
     assert status.principal == ("testuser", "EXAMPLE.ORG")
